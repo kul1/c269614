@@ -1,11 +1,12 @@
 
+
 # Problem from installing homebrew in user
 
 If Gemfile included: Nokogiri, Mongoid or kaminari-mongoid (which might be dependency from some gems) otherwise may not have these errors.
 
 ## Why:
 
-= Because some of dependency file/gems was misplaced and not able to build and will have several problems
+Because some of dependency files/gems were misplaced and not able to build
 
 ## Problem:
 
@@ -17,6 +18,26 @@ nokogiri ..'eof?': Is a directory
 
 
 ```
+Example:
+
+- An application that use both Nokogiri and Mongoid: [Jinda](https://github.com/kul1/jinda)
+- Install Jinda in [simulated environment](#how-to-simulate-this-error:), then errors will appear as describled below
+
+
+```
+git clone https://github.com/kulprateep-experian/c269614.git
+cd c269614
+rails s
+
+```
+- if the environment setup as described below, rails app should run as expected in localhost:3000, otherwise it will have several errors when bundle to install needed gems below:
+
+
+- Then please follow Problems/Solutions to fix those errors
+
+
+---
+
 
 ## How to simulate this error:
 
@@ -48,15 +69,17 @@ mimemagic install error: "Could not find MIME type database in the following loc
 
 ## Solution:
 
-```
+
 
 First, create a file named freedesktop.org.xml.
 
-Then copy the file content found in this link and paste it into the file just created.
+Then copy the file [content](https://cgit.freedesktop.org/xdg/shared-mime-info/tree/freedesktop.org.xml.in?h=Release-1-9) found in this link and paste it into the file just created.
 
 Finally, set the FREEDESKTOP_MIME_TYPES_PATH environment variable
 
 Unix terminal:
+
+```
 
 export FREEDESKTOP_MIME_TYPES_PATH=/path/to/freedesktop.org.xml
 
@@ -100,7 +123,7 @@ the next release.
 
     2. replace "2.6.9" with proper version of ruby
 
-    3. freedesktop.org.xml exist with it's content
+    3. freedesktop.org.xml exist with it's [content](https://cgit.freedesktop.org/xdg/shared-mime-info/tree/freedesktop.org.xml.in?h=Release-1-9) 
 
     4. run below command:
 
@@ -118,4 +141,7 @@ the next release.
 ```
 
 - Continue bundle or config command prior the error:
+
+
+written by: prateep.kul@experian.com
 
