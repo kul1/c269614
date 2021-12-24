@@ -1,4 +1,15 @@
-# Problem:
+
+# Problem from installing homebrew in user
+
+If Gemfile included: Nokogiri, Mongoid or kaminari-mongoid (which might be dependency from some gems) otherwise may not have these errors.
+
+## Why:
+
+= Because some of dependency file/gems was misplaced and not able to build and will have several problems
+
+## Problem:
+
+nokogiri ..'eof?': Is a directory
 
 ```
 
@@ -25,7 +36,9 @@ tar xz --strip 1 -C homebrew
 (for both zshrc or bash)
 
 
-## Immediate errors:
+## Immediate errors: 
+
+When bundle kaminari and kaminari-mongoid
 
 ```
 
